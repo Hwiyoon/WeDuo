@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,28 +50,16 @@ public class MemberController {
 
 	// login Post
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Member member, HttpSession session) {
-		System.out.println("login post방식 호출");
+	public String login(Member member, Model model, HttpSession session) {
 
-		System.out.println("<-------INPUT INFORMATION------->");
-		System.out.println("memberNAME :" + member.getMNAME());
-		System.out.println("memberID :" + member.getMID());
-		System.out.println("memberPW :" + member.getMPW());
-		System.out.println("memberBIRTH :" + member.getMBIRTH());
+		Member login = service.memberSearch(member);
 
-		Member mem = service.memberSearch(member);
-
-		if (mem == null)
+		if (login == null)
 			return "/member/loginForm";
-
-		session.setAttribute("member", mem);
-
-		System.out.println("<-------SEARCHED INFORMATION------->");
-		System.out.println("memberNAME :" + mem.getMNAME());
-		System.out.println("memberID :" + mem.getMID());
-		System.out.println("memberPW :" + mem.getMPW());
-		System.out.println("memberBIRTH :" + mem.getMBIRTH());
-
+		
+		session.setAttribute("loginMember", login);
+		//model.addAttribute("mem", searchedMember);
+		
 		return "/index";
 	}
 	

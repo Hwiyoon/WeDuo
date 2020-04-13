@@ -17,7 +17,7 @@ public class MemberLoginInterceptor extends HandlerInterceptorAdapter {
 		
 		HttpSession session = request.getSession();
 		if(session != null) {
-			Object obj = session.getAttribute("member");
+			Object obj = session.getAttribute("loginMember");
 			if(obj != null) {
 				System.out.println("member 세션 존재");
 				return true;

@@ -8,25 +8,17 @@
 <title>검색된 카페들</title>
 </head>
 <body>
-	<table>
+	<table border="1">
 		<thead>
 			<tr>
-				<th>카페번호</th>
 				<th>카페이름</th>
-				<th>카페주소</th>
-				<th>영업시간</th>
-				<th>홈페이지</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<c:forEach items="${cafeListByKeyword}" var="list">
 				<tr>
-					<td>${list.CNO}</td>
-					<td>${list.CNAME}</td>
-					<td>${list.CADDR}</td>
-					<td>${list.CTIME}</td>
-					<td>${list.CPAGE}</td>
+					<td><a href="${cp}/board/cafe/cafeRead?CNO=${list.CNO}">${list.CNAME}</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

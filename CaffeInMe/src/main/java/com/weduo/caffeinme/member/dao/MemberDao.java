@@ -50,7 +50,7 @@ public class MemberDao implements IMemberDao {
 		// TODO Auto-generated method stub
 
 		List<Member> members = null;
-		final String sql = "select MNAME, MBIRTH, MID, MPW from MEMBER where MID=? AND MPW=?";
+		final String sql = "select * from MEMBER where MID=? AND MPW=?";
 
 		members = template.query(sql, new PreparedStatementSetter() {
 			@Override
