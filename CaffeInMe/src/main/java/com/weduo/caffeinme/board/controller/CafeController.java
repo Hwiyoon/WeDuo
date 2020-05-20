@@ -48,6 +48,7 @@ public class CafeController {
 	public String getCafeListByKeyword(@RequestParam("keyword") String keyword, Model model, HttpSession session) {
 		
 		List<Cafe> searchedCafes = service.searchCafeList(keyword);
+		model.addAttribute("keyword", keyword);
 		model.addAttribute("cafeListByKeyword", searchedCafes);
 		session.setAttribute("cafeListByKeyword", searchedCafes);
 		

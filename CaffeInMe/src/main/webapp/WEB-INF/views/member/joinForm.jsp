@@ -8,24 +8,50 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="${cp}/resources/css/normal.css" />
-<script type="text/javascript"
-	src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-</script>
+
+<script src="${cp}/resources/jquery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/main.css">
+<link rel="stylesheet" media="screen" href="${cp}/resources/table/assets/fonts/font-awesome/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="${cp}/resources/css/user/shop/default.css">
+
 </head>
 <body>
-	<h1>MEMBER JOIN</h1>
+	<div id="root">
+		<header id="header">
+			<div id="header_box">
+				<%@ include file="../include/header.jsp"%>
+			</div>
+		</header>
+
+		<nav id="nav">
+			<div id="nav_box">
+				<%@ include file="../include/nav.jsp"%>
+			</div>
+		</nav>
+
+		<section id="container">
+			<%-- <aside id="aside">
+				<div id="aside_box">
+					<%@ include file="../include/aside.jsp" %>
+				</div>
+			</aside> --%>
+		
+			<div id="container_box">
+				<h1>MEMBER JOIN</h1>
 
 	<form:form action="${cp}/member/join" method="post"
 		commandName="member">
 		<table>
 			<tr>
-				<td>NAME</td>
+				<td>NAME : </td>
 				<td><form:input path="MNAME" /></td>
 			</tr>
 			<tr>
-				<td>ID</td>
+				<td>ID : </td>
 				<td><form:input path="MID" id="MID" /></td>
 				<td><button type="button" class="idCheck">중복확인</button></td>
 				<td><p class="result">
@@ -33,11 +59,11 @@
 					</p></td>
 			</tr>
 			<tr>
-				<td>PW</td>
+				<td>PW : </td>
 				<td><form:password path="MPW" /></td>
 			</tr>
 			<tr>
-				<td>BIRTH</td>
+				<td>BIRTH : </td>
 				<td><form:input path="MBIRTH" /></td>
 			</tr>
 			<tr>
@@ -46,9 +72,15 @@
 			</tr>
 		</table>
 	</form:form>
+			</div>
+		</section>
 
-	<a href="${cp}/index">MAIN</a>&nbsp;&nbsp;
-	<a href="${cp}/member/loginForm">LOGIN</a>&nbsp;&nbsp;
+		<footer id="footer">
+			<div id="footer_box">
+				<%@ include file="../include/footer.jsp"%>
+			</div>
+		</footer>
+	</div>
 
 	<script>
 	

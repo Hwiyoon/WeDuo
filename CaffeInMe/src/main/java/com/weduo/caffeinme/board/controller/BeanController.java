@@ -101,9 +101,10 @@ public class BeanController {
 	//원두리뷰 작성
 	@RequestMapping(value="/reviewWrite", method=RequestMethod.POST)
 	public String beanReviewWrite(BeanReviewDTO beanReviewDTO, HttpSession session) {
-		Member writer = (Member)session.getAttribute("member");
+		Member writer = (Member)session.getAttribute("loginMember");
 		Bean selectedBean = (Bean)session.getAttribute("sbean");
 		String mid = writer.getMID();
+		System.out.println("MID : "+mid);
 		int bno = selectedBean.getBNO();
 		
 		int result = service.writeBeanReview(mid, bno, beanReviewDTO);

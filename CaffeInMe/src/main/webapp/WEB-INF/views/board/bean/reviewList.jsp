@@ -6,9 +6,69 @@
 <head>
 <meta>
 <title>Insert title here</title>
+<script src="${cp}/resources/jquery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/main.css">
+<link rel="stylesheet" media="screen" href="${cp}/resources/table/assets/fonts/font-awesome/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="${cp}/resources/css/user/shop/default.css">
+
 </head>
 <body>
-	<table>
+
+<div id="root">
+		<header id="header">
+			<div id="header_box">
+				<%@ include file="../../include/header.jsp"%>
+			</div>
+		</header>
+
+		<nav id="nav">
+			<div id="nav_box">
+				<%@ include file="../../include/nav.jsp"%>
+			</div>
+		</nav>
+
+		<section id="pricing-table">
+            <div class="container">
+                <div class="row">
+                    <div class="pricing">
+                    <c:forEach items="${beanReviews}" var="review">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title">${review.TITLE}</p>
+                                    <a href="${cp}/board/bean/reviewRead?RNO=${review.RNO}" class="btn btn-custom">리뷰보기</a>
+                                 
+                                </div>
+
+                                <div class="pricing-list">
+                                    <ul>
+                                        <li><i class="fa fa-smile-o"></i>작성자 : ${review.MID}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        
+    <a href="${cp}/">메인 / </a>
+	<a href="${cp}/board/bean/reviewWriteForm">해당원두리뷰작성</a>
+
+		<footer id="footer">
+			<div id="footer_box">
+				<%@ include file="../../include/footer.jsp"%>
+			</div>
+		</footer>
+	</div>
+	
+	
+<%-- 	<table>
 		<thead>
 			<tr>
 				<th>리뷰번호</th>
@@ -26,9 +86,8 @@
 				</tr>
 			</c:forEach>
 		</tbody>
-	</table>
+	</table> --%>
 	
-	<a href="${cp}/">메인으로이동</a>
-	<a href="${cp}/board/bean/reviewWriteForm">원두 리뷰 작성하러가기</a>
+
 </body>
 </html>

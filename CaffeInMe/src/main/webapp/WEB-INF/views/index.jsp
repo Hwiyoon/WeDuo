@@ -5,11 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 <title>Insert title here</title>
 
 <script src="${cp}/resources/jquery/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/main.css">
+<link rel="stylesheet" media="screen" href="${cp}/resources/table/assets/fonts/font-awesome/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="${cp}/resources/css/user/shop/default.css">
 
 <style>
@@ -35,6 +40,15 @@
  footer#footer ul li { display:inline-block; margin-right:10px; }
 </style>
 
+<%-- <!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/bootstrap.min.css">
+            
+<!-- Main Style -->
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/main.css">
+
+<!--Icon Fonts-->
+<link rel="stylesheet" media="screen" href="${cp}/resources/table/assets/fonts/font-awesome/font-awesome.min.css" /> --%>
+
 </head>
 <body>
 	<div id="root">
@@ -49,8 +63,6 @@
 				<%@ include file="include/nav.jsp"%>
 			</div>
 		</nav>
-		
-		
 
 		<section id="container">
 			<%-- <aside id="aside">
@@ -74,7 +86,6 @@
 			</div>
 		</footer>
 	</div>
-
 
 </body>
 </html>

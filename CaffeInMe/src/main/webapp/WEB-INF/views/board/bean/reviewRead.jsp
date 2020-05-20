@@ -6,47 +6,97 @@
 <head>
 <meta>
 <title>Insert title here</title>
+<script src="${cp}/resources/jquery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet"
+	href="${cp}/resources/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${cp}/resources/table/assets/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+	href="${cp}/resources/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${cp}/resources/table/assets/css/main.css">
+<link rel="stylesheet" media="screen"
+	href="${cp}/resources/table/assets/fonts/font-awesome/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="${cp}/resources/css/user/shop/default.css">
+
 </head>
 <body>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>리뷰번호</th>
-				<th>리뷰제목</th>
-				<th>작성자</th>
-				<th>원두종류</th>
-				<th>신맛</th>
-				<th>단맛</th>
-				<th>쓴맛</th>
-				<th>바디감</th>
-				<th>아로마</th>
-				<th>플레이버</th>
-				<th>리뷰내용</th>
-			</tr>
-		</thead>
+	<div id="root">
+		<header id="header">
+		<div id="header_box">
+			<%@ include file="../../include/header.jsp"%>
+		</div>
+		</header>
 
-		<tbody>
-				<tr>
-					<td>${selectedReview.RNO}</td>
-					<td>${selectedReview.TITLE}</td>
-					<td>${selectedReview.MID}</td>
-					<td>${sbean.BNAME}</td>
-					<td>${selectedReview.SOUR}</td>
-					<td>${selectedReview.SWEET}</td>
-					<td>${selectedReview.BITTER}</td>
-					<td>${selectedReview.BODY}</td>
-					<td>${selectedReview.AROMA}</td>
-					<td>${selectedReview.FLAVOR}</td>
-					<td>${selectedReview.CONTENT}</td>
-				</tr>
-		</tbody>
+		<nav id="nav">
+		<div id="nav_box">
+			<%@ include file="../../include/nav.jsp"%>
+		</div>
+		</nav>
 
-	</table>
+		<section id="container"> <%-- <aside id="aside">
+				<div id="aside_box">
+					<%@ include file="include/aside.jsp" %>
+				</div>
+			</aside> --%>
+
+		<div id="container_box">
+			<h1>리 뷰 </h1><br /><br />
+			<br />
+			<table border="1">
+				<thead>
+					<tr>
+						<th>리뷰번호</th>
+						<th>리뷰제목</th>
+						<th>작성자</th>
+						<th>원두종류</th>
+						<th>신맛</th>
+						<th>단맛</th>
+						<th>쓴맛</th>
+						<th>바디감</th>
+						<th>아로마</th>
+						<th>플레이버</th>
+						<th>리뷰내용</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>${selectedReview.RNO}</td>
+						<td>${selectedReview.TITLE}</td>
+						<td>${selectedReview.MID}</td>
+						<td>${sbean.BNAME}</td>
+						<td>${selectedReview.SOUR}</td>
+						<td>${selectedReview.SWEET}</td>
+						<td>${selectedReview.BITTER}</td>
+						<td>${selectedReview.BODY}</td>
+						<td>${selectedReview.AROMA}</td>
+						<td>${selectedReview.FLAVOR}</td>
+						<td>${selectedReview.CONTENT}</td>
+					</tr>
+				</tbody>
+
+			</table>
+			
+	<a href="${cp}/">메인 / </a>
+	<a href="${cp}/board/bean/beanList">원두리스트 / </a>
+	<a href="${cp}/board/bean/reviewList?bno=${sbean.BNO}">해당원두리뷰목록 / </a>
+	<a href="${cp}/board/bean/reviewWriteForm">해당원두리뷰작성</a>
 	
-	<a href="${cp}/">메인으로 이동</a>
-	<a href="${cp}/board/bean/beanList">원두 리스트로 이동</a>
-	<a href="${cp}/board/bean/reviewList?bno=${sbean.BNO}">원두 리뷰 리스트로 이동</a>
-	<a href="${cp}/board/bean/reviewWriteForm">원두 리뷰 작성하러가기</a>
-	
+		</div>
+		</section>
+
+		<footer id="footer">
+		<div id="footer_box">
+			<%@ include file="../../include/footer.jsp"%>
+		</div>
+		</footer>
+	</div>
+
+
+
+
 </body>
 </html>

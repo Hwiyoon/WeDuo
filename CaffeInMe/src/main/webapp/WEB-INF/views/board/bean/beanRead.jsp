@@ -6,29 +6,84 @@
 <head>
 <meta>
 <title>Insert title here</title>
+<script src="${cp}/resources/jquery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="${cp}/resources/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="${cp}/resources/table/assets/css/main.css">
+<link rel="stylesheet" media="screen" href="${cp}/resources/table/assets/fonts/font-awesome/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="${cp}/resources/css/user/shop/default.css">
+
+<style>
+ /* section.reviewForm { padding:30px 0; }
+ section.reviewForm div.input_area { margin:10px 0; }
+ section.reviewForm textarea { font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:500px;; height:150px; }
+ section.reviewForm button { font-size:20px; padding:5px 10px; margin:10px 0; background:#fff; border:1px solid #ccc; }
+ 
+ section.reviewList { padding:30px 0; }
+ section.reviewList ol { padding:0; margin:0; }
+ section.reviewList ol li { padding:10px 0; border-bottom:2px solid #eee; }
+ section.reviewList div.memberInfo { }
+ section.reviewList div.memberInfo .MID { font-size:24px; font-weight:bold; }
+ section.reviewList div.memberInfo .reviewDate { color:#999; display:inline-block; margin-left:10px; }
+ section.reviewList div.reviewContetn { padding:10px; margin:20px 0; } */
+</style>
+
 </head>
 <body>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>원두이름</th>
-				<th>원두설명</th>
-			</tr>
-		</thead>
+	<div id="root">
+		<header id="header">
+			<div id="header_box">
+				<%@ include file="../../include/header.jsp"%>
+			</div>
+		</header>
 
-		<tbody>
-				<tr>
-					<td>${sbean.BNAME}</td>
-					<td>${sbean.CONTENT}</td>
-				</tr>
-		</tbody>
+		<nav id="nav">
+			<div id="nav_box">
+				<%@ include file="../../include/nav.jsp"%>
+			</div>
+		</nav>
+		
+		
 
-	</table>
-	
-	<a href="${cp}/">메인으로 이동</a>
-	<a href="${cp}/board/bean/beanList">원두 리스트로 이동</a>
-	<a href="${cp}/board/bean/reviewList?bno=${sbean.BNO}">원두 리뷰 리스트로 이동</a>
-	<a href="${cp}/board/bean/reviewWriteForm">원두 리뷰 작성하러가기</a>
-	
+		<section id="container">
+			<%-- <aside id="aside">
+				<div id="aside_box">
+					<%@ include file="include/aside.jsp" %>
+				</div>
+			</aside> --%>
+		
+			<div id="container_box">
+				<h1>검색 결과</h1><br />
+				<table border="1">
+					<thead>
+						<tr>
+							<th>원두이름</th>
+							<th>원두설명</th>
+						</tr>
+					</thead>
+			
+					<tbody>
+							<tr>
+								<td>${sbean.BNAME}</td>
+								<td>${sbean.CONTENT}</td>
+							</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="container_box">
+				<a href="${cp}/board/bean/reviewList?bno=${sbean.BNO}">리뷰목록</a> / 
+				<a href="${cp}/board/bean/reviewWriteForm">리뷰작성</a>	
+			</div>
+		</section>
+
+		<footer id="footer">
+			<div id="footer_box">
+				<%@ include file="../../include/footer.jsp"%>
+			</div>
+		</footer>
+	</div>
+
 </body>
 </html>
