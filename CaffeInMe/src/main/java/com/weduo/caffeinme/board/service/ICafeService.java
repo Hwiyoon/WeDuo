@@ -11,4 +11,6 @@ public interface ICafeService {
 	Cafe selectCafe(int cno);
 	void writeCafeReview(CafeReviewDTO cReviewDTO);
 	List<CafeReviewVO> getCafeReviews(int cno);
+	void deleteCafeReview(int rno);
+	void modifyCafeReview(CafeReviewVO cReviewVO);
 }

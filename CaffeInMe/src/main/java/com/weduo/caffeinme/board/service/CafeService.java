@@ -42,5 +42,31 @@ public class CafeService implements ICafeService {
 		// TODO Auto-generated method stub
 		return dao.getCafeReviews(cno);
 	}
+	
+	@Override
+	public void deleteCafeReview(int rno) {
+		// TODO Auto-generated method stub
+		int result = dao.deleteCafeReview(rno);
+		
+		if(result == 0) {
+			System.out.println("Cafe Review Delete Fail!!");
+		}else {
+			System.out.println("Cafe Review Delete Success!!");
+		}
+		
+	}
+	
+	@Override
+	public void modifyCafeReview(CafeReviewVO cReviewVO) {
+		// TODO Auto-generated method stub
+		int result = dao.modifyCafeReview(cReviewVO);
+		
+		if(result == 0) {
+			System.out.println("Cafe Review Modify Fail!!");
+		}else {
+			System.out.println("Cafe Review Modify Success!!");
+		}
+		
+	}
 
 }

@@ -137,5 +137,39 @@ public class CafeDao implements ICafeDao {
 		if(reviews.isEmpty())	return null;
 		return reviews;
 	}
+	
+	@Override
+	public int deleteCafeReview(final int rno) {
+		// TODO Auto-generated method stub
+		
+		final String sql = "delete from CREVIEW where RNO=?";
+		
+		int result = template.update(sql, new PreparedStatementSetter() {
+			@Override
+			public void setValues(PreparedStatement pstmt) throws SQLException {
+				// TODO Auto-generated method stub
+				pstmt.setInt(1, rno);
+			}
+		});
+		
+		return result;
+	}
+	
+	@Override
+	public int modifyCafeReview(final CafeReviewVO cReviewVO) {
+		// TODO Auto-generated method stub
+		final String sql = "update CREVIEW set content=? where rno=?";
+		
+		int result = template.update(sql, new PreparedStatementSetter() {
+			@Override
+			public void setValues(PreparedStatement pstmt) throws SQLException {
+				// TODO Auto-generated method stub
+				pstmt.setString(1, cReviewVO.getCONTENT());
+				pstmt.setInt(2, cReviewVO.getRNO());
+			}
+		});
+		
+		return result;
+	}
 
 }

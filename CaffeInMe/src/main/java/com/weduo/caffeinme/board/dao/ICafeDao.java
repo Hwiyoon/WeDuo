@@ -11,4 +11,6 @@ public interface ICafeDao {
 	Cafe selectCafe(int cno);
 	int cafeReviewWrite(CafeReviewDTO cReviewDTO);
 	List<CafeReviewVO> getCafeReviews(int cno);
+	int deleteCafeReview(int rno);
+	int modifyCafeReview(CafeReviewVO cReviewVO);
 }

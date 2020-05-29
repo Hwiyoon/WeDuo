@@ -100,6 +100,26 @@ public class CafeController {
 		service.writeCafeReview(cafeReviewDTO);
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/deleteCafeReview", method = RequestMethod.POST)
+	public void deleteCafeReview(@RequestParam("rno") int rno) {
+		
+		service.deleteCafeReview(rno);
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/modifyCafeReview", method = RequestMethod.POST)
+	public void modifyCafeReview(@RequestParam("RNO") int rno, @RequestParam("CONTENT") String content) {
+		
+		CafeReviewVO cReviewVO = new CafeReviewVO();
+		
+		cReviewVO.setRNO(rno);
+		cReviewVO.setCONTENT(content);
+		
+		service.modifyCafeReview(cReviewVO);
+		
+	}
 	
 
 
