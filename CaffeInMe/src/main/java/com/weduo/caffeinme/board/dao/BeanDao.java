@@ -49,7 +49,7 @@ public class BeanDao implements IBeanDao {
 	}
 	
 	@Override
-	public Bean beanSelect(final int bno) {
+	public Bean selectBean(final int bno) {
 		// TODO Auto-generated method stub
 		
 		List<Bean> beans = null;
@@ -143,7 +143,7 @@ public class BeanDao implements IBeanDao {
 	}
 	
 	@Override
-	public int beanReviewWrite(final String MID, final int BNO, final BeanReviewDTO beanReviewDTO) {
+	public int writeBeanReview(final String MID, final int BNO, final BeanReviewDTO beanReviewDTO) {
 		// TODO Auto-generated method stub
 		
 		final String sql = "insert into BREVIEW (RNO, MID, BNO, TITLE, CONTENT, SOUR, SWEET, BITTER, BODY, AROMA, FLAVOR)"
@@ -167,6 +167,19 @@ public class BeanDao implements IBeanDao {
 			}});
 		
 		return result;
+	}
+	
+	@Override
+	public void deleteBeanReview(final int rno) {
+		// TODO Auto-generated method stub
+		final String sql = "delete from BREVIEW where rno=?";
+		
+		template.update(sql, new PreparedStatementSetter() {
+			@Override
+			public void setValues(PreparedStatement pstmt) throws SQLException {
+				// TODO Auto-generated method stub
+				pstmt.setInt(1, rno);
+			}});
 	}
 
 }

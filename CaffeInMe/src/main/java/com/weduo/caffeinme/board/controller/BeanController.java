@@ -113,4 +113,13 @@ public class BeanController {
 		
 		return "/board/bean/reviewWriteSuccess";
 	}
+	
+	//원두리뷰 삭제
+	@RequestMapping(value="/reviewDelete")
+	public String beanReviewDelete(@RequestParam("rno") int rno){
+		
+		service.deleteBeanReview(rno);
+		
+		return "/board/bean/reviewDeleteSuccess";
+	}
 }

@@ -100,7 +100,5 @@
 	</div>
 
 
-	<a href="${cp}/index">MAIN</a>&nbsp;&nbsp;
-	<a href="${cp}/member/loginForm">LOGIN</a>&nbsp;&nbsp;
 </body>
 </html>

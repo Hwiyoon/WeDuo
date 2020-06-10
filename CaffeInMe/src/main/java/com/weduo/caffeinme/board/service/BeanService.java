@@ -25,7 +25,7 @@ public class BeanService implements IBeanService {
 	@Override
 	public Bean beanSearch(int bno) {
 		// TODO Auto-generated method stub
-		Bean searchedBean = dao.beanSelect(bno);
+		Bean searchedBean = dao.selectBean(bno);
 		return searchedBean;
 	}
 	
@@ -46,7 +46,7 @@ public class BeanService implements IBeanService {
 	@Override
 	public int writeBeanReview(String mid, int bno, BeanReviewDTO beanReviewDTO) {
 		// TODO Auto-generated method stub
-		int result = dao.beanReviewWrite(mid, bno, beanReviewDTO);
+		int result = dao.writeBeanReview(mid, bno, beanReviewDTO);
 		
 		if (result == 0) {
 			System.out.println("Join Fail!!");
@@ -55,6 +55,12 @@ public class BeanService implements IBeanService {
 		}
 		
 		return result;
+	}
+	
+	@Override
+	public void deleteBeanReview(int rno) {
+		// TODO Auto-generated method stub
+		dao.deleteBeanReview(rno);
 	}
 
 }

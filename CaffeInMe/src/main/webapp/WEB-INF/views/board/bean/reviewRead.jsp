@@ -80,10 +80,14 @@
 
 			</table>
 			
-	<a href="${cp}/">메인 / </a>
-	<a href="${cp}/board/bean/beanList">원두리스트 / </a>
-	<a href="${cp}/board/bean/reviewList?bno=${sbean.BNO}">해당원두리뷰목록 / </a>
-	<a href="${cp}/board/bean/reviewWriteForm">해당원두리뷰작성</a>
+	<a href="${cp}/board/bean/beanList">원두다시선택하기 / </a>
+	<a href="${cp}/board/bean/reviewList?bno=${sbean.BNO}">리뷰목록가기 / </a>
+	<a href="${cp}/board/bean/reviewWriteForm">리뷰작성하기</a>
+	<c:set var="loginMID" value="${loginMember.MID}" />
+	<c:set var="writerMID" value="${selectedReview.MID}" />
+	<c:if test="${loginMID eq writerMID}">
+		<a href="${cp}/board/bean/reviewDelete?rno=${selectedReview.RNO}"> / 리뷰삭제하기 </a>
+	</c:if>
 	
 		</div>
 		</section>

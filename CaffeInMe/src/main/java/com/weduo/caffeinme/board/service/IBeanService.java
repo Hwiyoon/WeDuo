@@ -13,4 +13,5 @@ public interface IBeanService {
 	List<BeanReviewList> beanReviewList(int bno);
 	BeanReview getBeanReview(int rno);
 	int writeBeanReview(String mid, int bno, BeanReviewDTO beanReviewDTO);
+	void deleteBeanReview(int rno);
 }
